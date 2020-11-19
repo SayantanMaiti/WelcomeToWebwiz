@@ -240,7 +240,7 @@ function Logo() {
       alt="Logo"
       width="50px"
       height="50px"
-      src="logo.jpg"
+      src="webwizLogo.jpeg"
     />
   )
 }
