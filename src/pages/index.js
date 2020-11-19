@@ -43,13 +43,19 @@ const useStyles = makeStyles(theme => ({
   heroContent: {
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
+    //background:'#ff5c5c',
+    backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
+    backgroundSize: 'cover',
+    overflow: 'hidden',
   },
   heroButtons: {
     marginTop: theme.spacing(4),
+    
   },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
+    
   },
   card: {
     height: "100%",
@@ -102,7 +108,7 @@ const useStyles = makeStyles(theme => ({
     color: "#000000",
   },
   iconSocialMedia: {
-    color: "#000000",
+    color: "#fff",
     marginLeft: "-10px",
     display: "flex",
     alignItems: "center",
@@ -323,8 +329,9 @@ export default function Home({ data }) {
                     variant="contained"
                     component="a"
                     href="https://github.com/codeforcauseorg/pledge#steps-to-take-the-pledge"
-                    color="primary"
+                    color="dark"
                     target="_blank"
+                    
                   >
                     Create a Pull Request
                   </Button>
