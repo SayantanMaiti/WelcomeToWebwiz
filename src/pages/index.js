@@ -99,10 +99,10 @@ const useStyles = makeStyles(theme => ({
     "& dt": {
       marginTop: theme.spacing(2),
     },
-    color: "#FFF",
+    color: "#000000",
   },
   iconSocialMedia: {
-    color: "#fff",
+    color: "#000000",
     marginLeft: "-10px",
     display: "flex",
     alignItems: "center",

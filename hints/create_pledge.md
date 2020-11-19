@@ -5,8 +5,8 @@
 
 ```
 {
-    "name": "Ganga Chaturvedi",
-    "skills" : ["JS", "React"],
+    "name": "Aniket Pal",
+    "skills" : ["Python", "JS","C++"],
     "cause" : "empowerment",
     "image" : "Avatar2",
     "github" : "https://github.com/gangachatrvedi",
