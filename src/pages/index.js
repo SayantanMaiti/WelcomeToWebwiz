@@ -75,7 +75,8 @@ const useStyles = makeStyles(theme => ({
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
+    padding: theme.spacing(2),
+    height: "4.5em"
   },
   chipActions: {
     display: "block",
@@ -84,7 +85,8 @@ const useStyles = makeStyles(theme => ({
     margin: "8px 0 3px 8px",
   },
   iconCls: {
-    marginLeft: "10px",
+    marginLeft: "5px",
+    marginRight: "5px"
   },
   extraMargin: {
     marginTop: "15px",
