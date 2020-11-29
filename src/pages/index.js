@@ -106,8 +106,8 @@ const useStyles = makeStyles(theme => ({
   },
   root: {
     backgroundColor: theme.palette.primary.main,
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
     "& dt": {
       marginTop: theme.spacing(2),
     },
