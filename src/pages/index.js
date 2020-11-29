@@ -35,6 +35,7 @@ import { Helmet } from "react-helmet"
 import favicon from "../../static/webwizFavicon.ico"
 import Img from "gatsby-image"
 import loadergif from "../../static/loading-opaque.gif"
+import { Repeat } from "@material-ui/icons"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -45,7 +46,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(8, 0, 6),
     //background:'#ff5c5c',
     backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
-    backgroundSize: 'cover',
+    backgroundSize: '150px',
+    backgroundRepeat: 'no-repeat',
     overflow: 'hidden',
   },
   heroButtons: {
@@ -290,14 +292,6 @@ export default function Home({ data }) {
         <link rel="icon" href={favicon} />
       </Helmet>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <Logo />
-          <Typography variant="h6" color="inherit" noWrap>
-            Webwiz
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
