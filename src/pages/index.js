@@ -96,6 +96,8 @@ const useStyles = makeStyles(theme => ({
   },
   btn: {
     textTransform: "none",
+    backgroundColor: "#9317d9",
+    color:"white"
   },
   copyRight: {
     backgroundColor: theme.palette.secondary.main,
@@ -311,7 +313,7 @@ export default function Home({ data }) {
               color="textSecondary"
               paragraph
             >
-              Every contribution counts! So let's come together to Code for a
+              Every contribution counts. So let's come together to Code for a
               Cause and grow together as a community. One pull request at a
               time.
             </Typography>
