@@ -327,11 +327,10 @@ export default function Home({ data }) {
                   <Button
                     className={classes.btn}
                     variant="contained"
-                    component="a"
+                    component="btn"
                     href="https://github.com/codeforcauseorg/pledge#steps-to-take-the-pledge"
                     color="dark"
-                    target="_blank"
-                    
+                    target="_blank" 
                   >
                     Create a Pull Request
                   </Button>
