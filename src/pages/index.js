@@ -309,7 +309,7 @@ export default function Home({ data }) {
               color="textPrimary"
               gutterBottom
             >
-              Welcome!!<span role="img" aria-label = "celebration">🥳</span> 
+              Welcome! 
             </Typography>
             <Typography
               variant="h5"
@@ -317,8 +317,8 @@ export default function Home({ data }) {
               color="textSecondary"
               paragraph
             >
-              Every contribution counts! So lets come together to Code for a
-              Cause &amp; grow together as a community. One pull request at a
+              Every contribution counts! So let's come together to Code for a
+              Cause and grow together as a community. One pull request at a
               time.
             </Typography>
             <div className={classes.heroButtons}>
@@ -377,10 +377,17 @@ export default function Home({ data }) {
                     {/* <Avatar alt="Remy Sharp" src={edge.node.image} /> */}
 
                     <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h6" component="h2">
+                        {`${edge.node.salutation}`}
+                      </Typography>
+                       
                       <Typography gutterBottom variant="h6" component="h2">
                         {`I am ${edge.node.name}`}
                       </Typography>
-                      <Typography>{`I code for ${edge.node.cause}`}</Typography>
+                      <Typography>{`I'm pursuing ${edge.node.branch}`}</Typography>
+                      <Typography>{`I'm from ${edge.node.nativeplace}`}</Typography>
+                      <Typography className={classes.extraMargin}>
+                        {`I code for ${edge.node.cause}`}</Typography>
                       <Typography className={classes.extraMargin}>
                         {`You can reach me at :`}
                       </Typography>
@@ -459,7 +466,10 @@ export const query = graphql`
     allContributorsJson {
       edges {
         node {
+          salutation
           name
+          branch
+          nativeplace
           cause
           skills
           image
