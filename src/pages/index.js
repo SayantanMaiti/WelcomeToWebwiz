@@ -257,7 +257,7 @@ function Loader() {
       <img
         src={loadergif}
         alt="..."
-        style={{ margin: "20%",marginLeft:"40%", display: "block",height:"100%" }}
+        style={{ margin: "20%",marginLeft:"45%",marginBottom:"-50%", display: "block",height:"80%" }}
       />
     </Fragment>
   )
