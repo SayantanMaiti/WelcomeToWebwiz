@@ -32,7 +32,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import YoutubeIcon from "@material-ui/icons/YouTube"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { Helmet } from "react-helmet"
-import favicon from "../../static/webwizFavicon.ico"
+import favicon from "../../static/logo.ico"
 import Img from "gatsby-image"
 import loadergif from "../../static/welcome.gif"
 
