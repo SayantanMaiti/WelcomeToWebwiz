@@ -1,4 +1,4 @@
-{/*https://avatars.githubusercontent.com/username  need to pass username in the url  */}
+
 import React, { useState, useEffect, Fragment } from "react"
 import CardContent from "@material-ui/core/CardContent"
 import CssBaseline from "@material-ui/core/CssBaseline"
@@ -37,6 +37,8 @@ import favicon from "../../static/logo.ico"
 import Img from "gatsby-image"
 import loadergif from "../../static/welcome.gif"
 import { SignalWifi1BarLock } from "@material-ui/icons"
+
+{/*https://avatars.githubusercontent.com/username  need to pass username in the url*/}
 
 const useStyles = makeStyles(theme => ({
   icon: {
