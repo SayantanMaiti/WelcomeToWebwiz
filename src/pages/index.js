@@ -35,6 +35,7 @@ import { Helmet } from "react-helmet"
 import favicon from "../../static/logo.ico"
 import Img from "gatsby-image"
 import loadergif from "../../static/welcome.gif"
+import { SignalWifi1BarLock } from "@material-ui/icons"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -61,15 +62,17 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    borderRadius: "10px",
+    borderRadius: "40px",
+    
   },
   cardMedia: {
     width: "100%",
     height: "auto",
-    // paddingTop: "56.25%", // 16:9
+    //paddingTop: "56.25%", // 16:9
   },
   cardContent: {
     flexGrow: 1,
+    
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -82,7 +85,8 @@ const useStyles = makeStyles(theme => ({
     margin: "8px 0 3px 8px",
   },
   iconCls: {
-    marginLeft: "10px",
+    marginLeft: "20px",
+    padding:"20px"
   },
   extraMargin: {
     marginTop: "15px",
@@ -154,7 +158,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.facebook.com/codeforcauseorg"
+              href="https://www.facebook.com/search/top?q=webwiz.nitr"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -170,7 +174,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://twitter.com/codeforcauseIn"
+              href="https://twitter.com/webwiznitr"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -186,7 +190,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.instagram.com/codeforcause/"
+              href="https://www.instagram.com/webwiz.nitr/"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -199,26 +203,11 @@ function Footer() {
                 />
               </Hidden>
             </ListItem>
+            
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.youtube.com/channel/UCfv8cds8AfIM3UZtAWOz6Gg"
-              target="_blank"
-            >
-              <ListItemIcon className={classes.iconSocialMedia}>
-                <YoutubeIcon className={classes.iconSize} />
-              </ListItemIcon>
-              <Hidden xsDown>
-                <ListItemText
-                  className={classes.iconSocialMedia}
-                  primary="Youtube"
-                />
-              </Hidden>
-            </ListItem>
-            <ListItem
-              className={matches ? classes.paddingCls : classes.paddingClsxs}
-              component="a"
-              href="https://www.linkedin.com/company/codeforcauseorg/"
+              href="https://www.linkedin.com/company/webwiz-nitr/"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -373,9 +362,23 @@ export default function Home({ data }) {
                         {`I am ${edge.node.name}`}
                       </Typography>
                       <Typography>{`I code for ${edge.node.cause}`}</Typography>
-                      <Typography className={classes.extraMargin}>
-                        {`You can reach me at :`}
-                      </Typography>
+        
+                    </CardContent>
+                    {/*<Divider />*/}
+                    <CardActions className={classes.chipActions}>
+                      {edge.node.skills.slice(0, 3).map((skill, i) => (
+                        <Chip
+                          key={i}
+                          className={classes.chip}
+                          label={skill}
+                          
+                          color="primary"
+                          
+                        />
+                      ))}
+                    </CardActions>
+                    {/*<Divider />*/}
+                    
                       <Typography className={classes.extraMargin}>
                         {edge.node.github ? (
                           <Link
@@ -408,20 +411,6 @@ export default function Home({ data }) {
                           </Link>
                         ) : null}
                       </Typography>
-                    </CardContent>
-                    <Divider />
-                    <CardActions className={classes.chipActions}>
-                      {edge.node.skills.slice(0, 3).map((skill, i) => (
-                        <Chip
-                          key={i}
-                          className={classes.chip}
-                          label={skill}
-                          variant="outlined"
-                          color="primary"
-                          avatar={<Avatar>{skill[0].toUpperCase()}</Avatar>}
-                        />
-                      ))}
-                    </CardActions>
                   </Card>
                 </Grid>
               )
