@@ -321,11 +321,11 @@ export default function Home({ data }) {
                     className={classes.btn}
                     variant="contained"
                     component="btn"
-                    href="https://github.com/codeforcauseorg/pledge#steps-to-take-the-pledge"
+                    href="https://webwiznitr.xyz"
                     color="dark"
                     target="_blank" 
                   >
-                    Create a Pull Request
+                    Join Us
                   </Button>
                 </Grid>
               </Grid>
