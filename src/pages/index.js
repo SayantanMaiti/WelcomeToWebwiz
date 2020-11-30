@@ -34,7 +34,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { Helmet } from "react-helmet"
 import favicon from "../../static/webwizFavicon.ico"
 import Img from "gatsby-image"
-import loadergif from "../../static/loading-opaque.gif"
+import loadergif from "../../static/welcome.gif"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
     //background:'#ff5c5c',
-    backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
+    //backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
     backgroundSize: 'cover',
     overflow: 'hidden',
   },
@@ -257,7 +257,7 @@ function Loader() {
       <img
         src={loadergif}
         alt="..."
-        style={{ margin: "auto", display: "block", width: "60%" }}
+        style={{ margin: "20%",marginLeft:"40%", display: "block",height:"100%" }}
       />
     </Fragment>
   )
@@ -290,14 +290,7 @@ export default function Home({ data }) {
         <link rel="icon" href={favicon} />
       </Helmet>
       <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-          <Logo />
-          <Typography variant="h6" color="inherit" noWrap>
-            Webwiz
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
