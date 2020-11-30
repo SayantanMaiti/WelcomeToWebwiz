@@ -1,10 +1,10 @@
+{/*https://avatars.githubusercontent.com/username  need to pass username in the url  */}
 import React, { useState, useEffect, Fragment } from "react"
 import CardContent from "@material-ui/core/CardContent"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Toolbar from "@material-ui/core/Toolbar"
 import { makeStyles } from "@material-ui/core/styles"
 import {
-  AppBar,
   Button,
   Card,
   CardActions,
@@ -29,6 +29,7 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import YoutubeIcon from "@material-ui/icons/YouTube"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { Helmet } from "react-helmet"
@@ -377,6 +378,18 @@ export default function Home({ data }) {
                         />
                       ))}
                     </CardActions>
+                    <Typography>
+                    {edge.node.LocationOnIcon ? (
+                          <Link
+                            className={classes.iconCls}
+                            href={edge.node.LocationOnIcon}
+                            component="a"
+                            target="_blank"
+                          >
+                            <LocationOnIcon></LocationOnIcon>
+                          </Link>
+                        ) : null}
+                    </Typography>
                     {/*<Divider />*/}
                     
                       <Typography className={classes.extraMargin}>
@@ -447,6 +460,7 @@ export const query = graphql`
           github
           twitter
           linkedin
+          
         }
       }
     }
