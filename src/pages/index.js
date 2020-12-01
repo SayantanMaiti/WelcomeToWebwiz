@@ -69,7 +69,6 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     borderRadius: "40px",
-    
   },
   cardMedia: {
     width: "100%",
