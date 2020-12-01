@@ -40,6 +40,7 @@ import { SignalWifi1BarLock } from "@material-ui/icons"
 
 {/*https://avatars.githubusercontent.com/username  need to pass username in the url*/}
 
+
 const useStyles = makeStyles(theme => ({
   icon: {
     marginRight: theme.spacing(2),
@@ -48,8 +49,10 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
     //background:'#ff5c5c',
-    //backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
-    backgroundSize: 'cover',
+
+    backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
+    backgroundSize: '150px',
+    backgroundRepeat: 'no-repeat',
     overflow: 'hidden',
   },
   heroButtons: {
@@ -79,7 +82,8 @@ const useStyles = makeStyles(theme => ({
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
+    padding: theme.spacing(2),
+    height: "4.5em"
   },
   chipActions: {
     display: "block",
@@ -88,8 +92,8 @@ const useStyles = makeStyles(theme => ({
     margin: "8px 0 3px 8px",
   },
   iconCls: {
-    marginLeft: "20px",
-    padding:"20px"
+    marginLeft: "5px",
+    marginRight: "5px"
   },
   extraMargin: {
     marginTop: "15px",
@@ -101,14 +105,16 @@ const useStyles = makeStyles(theme => ({
   },
   btn: {
     textTransform: "none",
+    backgroundColor: "#9317d9",
+    color:"white"
   },
   copyRight: {
     backgroundColor: theme.palette.secondary.main,
   },
   root: {
     backgroundColor: theme.palette.primary.main,
-    paddingTop: theme.spacing(3),
-    paddingBottom: theme.spacing(3),
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
     "& dt": {
       marginTop: theme.spacing(2),
     },
@@ -282,7 +288,7 @@ export default function Home({ data }) {
         <link rel="icon" href={favicon} />
       </Helmet>
       <CssBaseline />
-      
+
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -294,7 +300,7 @@ export default function Home({ data }) {
               color="textPrimary"
               gutterBottom
             >
-              Welcome!!<span role="img" aria-label = "celebration">🥳</span> 
+              Welcome! 
             </Typography>
             <Typography
               variant="h5"
@@ -302,8 +308,8 @@ export default function Home({ data }) {
               color="textSecondary"
               paragraph
             >
-              Every contribution counts! So lets come together to Code for a
-              Cause &amp; grow together as a community. One pull request at a
+              Every contribution counts. So let's come together to Code for a
+              Cause and grow together as a community. One pull request at a
               time.
             </Typography>
             <div className={classes.heroButtons}>
@@ -361,9 +367,14 @@ export default function Home({ data }) {
                     {/* <Avatar alt="Remy Sharp" src={edge.node.image} /> */}
 
                     <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h6" component="h2">
+                        {`${edge.node.salutation}`}
+                      </Typography>
+                       
                       <Typography gutterBottom variant="h6" component="h2">
                         {`I am ${edge.node.name}`}
                       </Typography>
+
                       <Typography>{`I code for ${edge.node.cause}`}</Typography>
         
                     </CardContent>
@@ -394,6 +405,14 @@ export default function Home({ data }) {
                     </Typography>
                     {/*<Divider />*/}
                     
+                      <Typography>{`I'm pursuing ${edge.node.branch}`}</Typography>
+                      <Typography>{`I'm from ${edge.node.nativeplace}`}</Typography>
+                      <Typography className={classes.extraMargin}>
+                        {`I code for ${edge.node.cause}`}</Typography>
+                      <Typography className={classes.extraMargin}>
+                        {`You can reach me at :`}
+                      </Typography>
+
                       <Typography className={classes.extraMargin}>
                         {edge.node.github ? (
                           <Link
@@ -455,7 +474,10 @@ export const query = graphql`
     allContributorsJson {
       edges {
         node {
+          salutation
           name
+          branch
+          nativeplace
           cause
           skills
           image
