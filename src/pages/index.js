@@ -1,10 +1,10 @@
+
 import React, { useState, useEffect, Fragment } from "react"
 import CardContent from "@material-ui/core/CardContent"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Toolbar from "@material-ui/core/Toolbar"
 import { makeStyles } from "@material-ui/core/styles"
 import {
-  AppBar,
   Button,
   Card,
   CardActions,
@@ -29,13 +29,17 @@ import FacebookIcon from "@material-ui/icons/Facebook"
 import TwitterIcon from "@material-ui/icons/Twitter"
 import InstagramIcon from "@material-ui/icons/Instagram"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 import YoutubeIcon from "@material-ui/icons/YouTube"
 import useMediaQuery from "@material-ui/core/useMediaQuery"
 import { Helmet } from "react-helmet"
-import favicon from "../../static/webwizFavicon.ico"
+import favicon from "../../static/logo.ico"
 import Img from "gatsby-image"
-import loadergif from "../../static/loading-opaque.gif"
-import { Repeat } from "@material-ui/icons"
+import loadergif from "../../static/welcome.gif"
+import { SignalWifi1BarLock } from "@material-ui/icons"
+
+{/*https://avatars.githubusercontent.com/username  need to pass username in the url*/}
+
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -45,6 +49,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6),
     //background:'#ff5c5c',
+
     backgroundImage: "url(" + "https://webwiznitr.xyz/assets/img/logo.png" + ")",
     backgroundSize: '150px',
     backgroundRepeat: 'no-repeat',
@@ -63,15 +68,17 @@ const useStyles = makeStyles(theme => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
-    borderRadius: "10px",
+    borderRadius: "40px",
+    
   },
   cardMedia: {
     width: "100%",
     height: "auto",
-    // paddingTop: "56.25%", // 16:9
+    //paddingTop: "56.25%", // 16:9
   },
   cardContent: {
     flexGrow: 1,
+    
   },
   footer: {
     backgroundColor: theme.palette.background.paper,
@@ -160,7 +167,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.facebook.com/codeforcauseorg"
+              href="https://www.facebook.com/search/top?q=webwiz.nitr"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -176,7 +183,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://twitter.com/codeforcauseIn"
+              href="https://twitter.com/webwiznitr"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -192,7 +199,7 @@ function Footer() {
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.instagram.com/codeforcause/"
+              href="https://www.instagram.com/webwiz.nitr/"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -205,26 +212,11 @@ function Footer() {
                 />
               </Hidden>
             </ListItem>
+            
             <ListItem
               className={matches ? classes.paddingCls : classes.paddingClsxs}
               component="a"
-              href="https://www.youtube.com/channel/UCfv8cds8AfIM3UZtAWOz6Gg"
-              target="_blank"
-            >
-              <ListItemIcon className={classes.iconSocialMedia}>
-                <YoutubeIcon className={classes.iconSize} />
-              </ListItemIcon>
-              <Hidden xsDown>
-                <ListItemText
-                  className={classes.iconSocialMedia}
-                  primary="Youtube"
-                />
-              </Hidden>
-            </ListItem>
-            <ListItem
-              className={matches ? classes.paddingCls : classes.paddingClsxs}
-              component="a"
-              href="https://www.linkedin.com/company/codeforcauseorg/"
+              href="https://www.linkedin.com/company/webwiz-nitr/"
               target="_blank"
             >
               <ListItemIcon className={classes.iconSocialMedia}>
@@ -263,7 +255,7 @@ function Loader() {
       <img
         src={loadergif}
         alt="..."
-        style={{ margin: "auto", display: "block", width: "60%" }}
+        style={{ margin: "20%",marginLeft:"45%",marginBottom:"-50%", display: "block",height:"80%" }}
       />
     </Fragment>
   )
@@ -296,6 +288,7 @@ export default function Home({ data }) {
         <link rel="icon" href={favicon} />
       </Helmet>
       <CssBaseline />
+
       <main>
         {/* Hero unit */}
         <div className={classes.heroContent}>
@@ -325,13 +318,12 @@ export default function Home({ data }) {
                   <Button
                     className={classes.btn}
                     variant="contained"
-                    component="a"
-                    href="https://github.com/codeforcauseorg/pledge#steps-to-take-the-pledge"
+                    component="btn"
+                    href="https://webwiznitr.xyz"
                     color="dark"
-                    target="_blank"
-                    
+                    target="_blank" 
                   >
-                    Create a Pull Request
+                    Join Us
                   </Button>
                 </Grid>
               </Grid>
@@ -382,6 +374,37 @@ export default function Home({ data }) {
                       <Typography gutterBottom variant="h6" component="h2">
                         {`I am ${edge.node.name}`}
                       </Typography>
+
+                      <Typography>{`I code for ${edge.node.cause}`}</Typography>
+        
+                    </CardContent>
+                    {/*<Divider />*/}
+                    <CardActions className={classes.chipActions}>
+                      {edge.node.skills.slice(0, 3).map((skill, i) => (
+                        <Chip
+                          key={i}
+                          className={classes.chip}
+                          label={skill}
+                          
+                          color="primary"
+                          
+                        />
+                      ))}
+                    </CardActions>
+                    <Typography>
+                    {edge.node.LocationOnIcon ? (
+                          <Link
+                            className={classes.iconCls}
+                            href={edge.node.LocationOnIcon}
+                            component="a"
+                            target="_blank"
+                          >
+                            <LocationOnIcon></LocationOnIcon>
+                          </Link>
+                        ) : null}
+                    </Typography>
+                    {/*<Divider />*/}
+                    
                       <Typography>{`I'm pursuing ${edge.node.branch}`}</Typography>
                       <Typography>{`I'm from ${edge.node.nativeplace}`}</Typography>
                       <Typography className={classes.extraMargin}>
@@ -389,6 +412,7 @@ export default function Home({ data }) {
                       <Typography className={classes.extraMargin}>
                         {`You can reach me at :`}
                       </Typography>
+
                       <Typography className={classes.extraMargin}>
                         {edge.node.github ? (
                           <Link
@@ -421,20 +445,6 @@ export default function Home({ data }) {
                           </Link>
                         ) : null}
                       </Typography>
-                    </CardContent>
-                    <Divider />
-                    <CardActions className={classes.chipActions}>
-                      {edge.node.skills.slice(0, 3).map((skill, i) => (
-                        <Chip
-                          key={i}
-                          className={classes.chip}
-                          label={skill}
-                          variant="outlined"
-                          color="primary"
-                          avatar={<Avatar>{skill[0].toUpperCase()}</Avatar>}
-                        />
-                      ))}
-                    </CardActions>
                   </Card>
                 </Grid>
               )
@@ -474,6 +484,7 @@ export const query = graphql`
           github
           twitter
           linkedin
+          
         }
       }
     }
