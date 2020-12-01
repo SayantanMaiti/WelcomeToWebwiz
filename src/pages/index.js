@@ -69,6 +69,7 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     flexDirection: "column",
     borderRadius: "40px",
+
   },
   cardMedia: {
     width: "100%",
@@ -97,6 +98,7 @@ const useStyles = makeStyles(theme => ({
   extraMargin: {
     marginTop: "15px",
     marginBottom: "0",
+    marginLeft:"15px",
   },
   avatar: {
     height: 155,
@@ -404,8 +406,8 @@ export default function Home({ data }) {
                     </Typography>
                     {/*<Divider />*/}
                     
-                      <Typography>{`I'm pursuing ${edge.node.branch}`}</Typography>
-                      <Typography>{`I'm from ${edge.node.nativeplace}`}</Typography>
+                      <Typography className={classes.extraMargin}>{`I'm pursuing ${edge.node.branch}`}</Typography>
+                      <Typography className={classes.extraMargin}>{`I'm from ${edge.node.nativeplace}`}</Typography>
                       <Typography className={classes.extraMargin}>
                         {`I code for ${edge.node.cause}`}</Typography>
                       <Typography className={classes.extraMargin}>
